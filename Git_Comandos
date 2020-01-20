@@ -1,0 +1,113 @@
+------------Agregar usuario y mail------------------------
+
+
+git config --global user.name "Ivan"
+gin config --global user.mail "nunez.ivan77@gmail.com"
+
+------------------------------------------------------------------------------------
+// Para ver el estado de los archivos,
+ si se modificaron o no estan subidos, se muestran en rojo, en verde si estan en el stage
+
+git status 
+
+
+------------------------------------------------------------------------------------
+// para agregar los archivos a stage, si colocamos punto sin especificar agrega todo
+
+git add archivos.html
+git add .
+
+-------------------------------------------------------------------------------------
+// para quitar archivos del stage
+git reset 
+
+--------------------------------------------------------------------------------------
+// agregamos los archivos a la rama principal
+git commit -m "Comentarios" 
+
+--------------------------------------------------------------------------------------
+// Muestra la diferencia entre los archivos
+
+git diff 
+
+
+--------------------------------------------------------------------------------------
+//volvemos al estado anterior al commit
+
+
+git checkout . 
+
+git checkout otra_branch // Cambiamos el HEAD, para trbajar en la "otra_branch"
+
+git checkout -b nueva_funcionalidad // Nos crea la rama y nos coloca ya en ella para trabajar
+
+--------------------------------------------------------------------------------------
+// Para ver el log de cambios
+
+git log 
+git log --oneline --decorate --all --graph // Para ver los logs y ver las ramas
+git reflog // Vemos el log pero incluyendo si hicimos un reset y volvimos atras borrando logs viejos
+--------------------------------------------------------------------------------------
+// le ponemos un alias al comando log. Luego solo colocando git l, nos ejecutaria el log
+
+git config --global alias.l "log" 
+
+--------------------------------------------------------------------------------------
+// Se utiliza para modificar el log anterior, en caso de que nos equivoquemos
+
+git commit --amend -m "comentario" 
+--------------------------------------------------------------------------------------
+// Se usa para modificar un archivo, el cual se cambiara en la caperta, pero se debe hacer un commit para agregarlo 
+
+git mv arvhivo.html archivo1.html  
+--------------------------------------------------------------------------------------
+// Se elimina el archivo, luego se hace el commit, es todo para q qde registrado el borrado
+
+git rm archivo.html 
+--------------------------------------------------------------------------------------
+// cn reset soft, solo volvemos al momento que indicamos cn el ID, pero no recuperamos nada. 
+Con --hard, recuperamos el archivo que necesitamos
+
+git reset --soft 12i1odoi1m2e1oimd (id del numero de suceso) 
+
+git reset --mixed 1231ijo12i41o4ij(id) // Volvemos a un punto, y ahi podemos cambiar el archivo y 
+                                            realizar el commit para modificarlo
+
+--------------------------------------------------------------------------------------
+ // En el archivo especififamos todo lo que queremos que ignore 
+
+.gitignore
+--------------------------------------------------------------------------------------
+// creamos un rama del codigo que veniamos trabajando
+
+git branch nuevo_funcionalidad 
+git branch -d nueva_funcionalidad // Borramos la rama porque ya unida al Principal no tiene sentido tenerla
+
+--------------------------------------------------------------------------------------
+// Primero debemos ir a la rama Master o principal, y ahi hacemos el merge.
+
+git merge nueva_funcionalidad 
+
+--------------------------------------------------------------------------------------
+// Podemos etiquetar para ir creando versiones, si usamos el id podemos etiquetar commit viejos
+
+git tag vesion_1.0.0 (id -m "Version 0.5.0") 
+
+git tag -d version_1.0.0 // Eliminamos el tag
+
+--------------------------------------------------------------------------------------
+ // vemos el archivo con el tag
+
+git show version_1.0.0
+
+-----------------GITHUB----------------------------------
+
+git remote add origin https://github.com/po77i/lweb.git // agregar el destino en github
+
+git push -u origin master // Subimos el archivo al master
+
+git pull // Nos baja el archivo de github y lo agrega al proyecto principal
+
+
+
+git clone https://github.com/po77i/lweb.git  // Clonamos el proyecto en nuestro pc
