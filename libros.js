@@ -30,7 +30,7 @@ class Libros{
     let autor1
     do {
 
-       autor = prompt("Ingrese el autor: ");
+       autor1 = prompt("Ingrese el autor: ");
 
     }while(autor1 == "");
    
@@ -41,21 +41,21 @@ class Libros{
 const p_año = () => {
     let anio1;
     do{
-        anio = prompt("Ingrese año de edicion (4 digitos): ");
+        anio1 = prompt("Ingrese año de edicion (4 digitos): ");
     }while(anio1.length < 4);
     
     return anio1;
 }
 
-const p_autor = () => {
-    let genero;
-    do {
-        genero = prompt("Ingrese genero: ");
-    }while (genero != "aventura" || genero != "terror" || genero != "fantasia");
+const p_gen = () => {
+    let genero1;
+    
+        do {
+            genero1 = prompt("Ingrese genero: ");
+            genero1.toLowerCase;
+            }while (genero1 != "aventura" && genero1 != "terror" && genero1 !="fantasia");
 
-
-
-
+    return genero1;
 }
 
 //const libro_info = document.getElementById("libro_info");
@@ -67,16 +67,16 @@ let biblioteca = new Array();
 
 
 
-for (const i=0;i<3;i++){
+//for (const i=0;i<3;i++){
     
     let title = p_nombre();
     let auth = p_autor();
     let age = p_año();
     let gen = p_gen();
-    biblioteca[i] = new Libros(title,auth,age,gen);
+    const n_libro = new Libros(title,auth,age,gen);
     
-}
+//}
 
-libro_info.textContent = ` ${biblioteca[1].mostrar()} `;
+libro_info.textContent = ` ${n_libro.mostrar()} `;
 
 
