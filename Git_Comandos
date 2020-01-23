@@ -57,7 +57,8 @@ git config --global alias.l "log"
 
 git commit --amend -m "comentario" 
 --------------------------------------------------------------------------------------
-// Se usa para modificar un archivo, el cual se cambiara en la caperta, pero se debe hacer un commit para agregarlo 
+// Se usa para modificar un archivo, el cual se cambiara en la caperta, 
+pero se debe hacer un commit para agregarlo 
 
 git mv arvhivo.html archivo1.html  
 --------------------------------------------------------------------------------------

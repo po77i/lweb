@@ -42,7 +42,7 @@ const p_año = () => {
     let anio1;
     do{
         anio1 = prompt("Ingrese año de edicion (4 digitos): ");
-    }while(anio1.length < 4);
+    }while(anio1.length < 4 || isNaN(anio1)); // Se controla el largo y que sea numero
     
     return anio1;
 }
@@ -75,10 +75,26 @@ const mostrarAordenados = (biblio,a) => {
     
 }
 
+const m_genero = (biblio) => {
+
+    let x = prompt("Ingrese genero que quiere buscar");
+    let elec = new Array();
+    
+    // Recorro la biblioteca, si el genero es el que se eligio lo guardo en otro array
+    for(let i=0; i<3 ;i++){  // For resumido, que recorre sin usar contadores 
+        if (biblio[i].genero == x){
+            elec.push(biblio[i]);// Agrego a lo ultimo el libro
+        }
+    }
+   return console.log(elec);
+
+}
+
 
 //Creamos las variables
 const libro_info= document.querySelector('#libro_info'); // Seleccionar elemento por ID, otro metodo
 const aOrdenados = document.querySelector('#aOrdenados');
+const busqueda = document.querySelector('#busqueda');
 let biblioteca = new Array();
 let autoresO = new Array();
 
@@ -95,7 +111,7 @@ for (let i=0;i<3;i++){
 
 //mostrartodo();
 mostrarAordenados(biblioteca,autoresO);
-
+m_genero(biblioteca);
 //}//libro_info.textContent = ` ${n_libro.mostrar()} `;
 
 
