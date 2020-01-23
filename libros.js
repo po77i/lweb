@@ -57,10 +57,30 @@ const p_gen = () => {
     return genero1;
 }
 
+const mostrartodo = () => {
+
+    for (let i = 0 ; i < 3; i++){
+        biblioteca[i].mostrar();
+    }
+
+}
+
+const mostrarAordenados = (biblio,a) => {
+    for(let i= 0;i<3;i++){
+        a[i] = biblio[i].autor;
+    
+    }
+    a.sort();
+    return aOrdenados.textContent = `Autores ordenados : ${a}`;
+    
+}
+
+
 //Creamos las variables
 const libro_info= document.querySelector('#libro_info'); // Seleccionar elemento por ID, otro metodo
+const aOrdenados = document.querySelector('#aOrdenados');
 let biblioteca = new Array();
-
+let autoresO = new Array();
 
 
 for (let i=0;i<3;i++){
@@ -73,8 +93,10 @@ for (let i=0;i<3;i++){
     
 }
 
-for(let j= 0;j<3;j++){
-console.log(biblioteca[j]);
-}//libro_info.textContent = ` ${n_libro.mostrar()} `;
+//mostrartodo();
+mostrarAordenados(biblioteca,autoresO);
+
+//}//libro_info.textContent = ` ${n_libro.mostrar()} `;
+
 
 
