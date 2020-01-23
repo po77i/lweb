@@ -52,8 +52,7 @@ const p_gen = () => {
     
         do {
             genero1 = prompt("Ingrese genero: ");
-            genero1.toLowerCase;
-            }while (genero1 != "aventura" && genero1 != "terror" && genero1 !="fantasia");
+            }while (genero1.toLowerCase() != "aventura" && genero1.toLowerCase() != "terror" && genero1.toLowerCase() !="fantasia");
 
     return genero1;
 }
