@@ -57,25 +57,24 @@ const p_gen = () => {
     return genero1;
 }
 
-//const libro_info = document.getElementById("libro_info");
+//Creamos las variables
 const libro_info= document.querySelector('#libro_info'); // Seleccionar elemento por ID, otro metodo
-
-
-
 let biblioteca = new Array();
 
 
 
-//for (const i=0;i<3;i++){
+for (let i=0;i<3;i++){
     
     let title = p_nombre();
     let auth = p_autor();
     let age = p_año();
     let gen = p_gen();
-    const n_libro = new Libros(title,auth,age,gen);
+    biblioteca[i] = new Libros(title,auth,age,gen);
     
-//}
+}
 
-libro_info.textContent = ` ${n_libro.mostrar()} `;
+for(let j= 0;j<3;j++){
+console.log(biblioteca[j]);
+}//libro_info.textContent = ` ${n_libro.mostrar()} `;
 
 
