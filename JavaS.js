@@ -53,7 +53,7 @@ nombres.splice(3); // Elimina todos los elementos a partir de la posicion ingres
 nombres.splice(2,2); // Elimina desde la posicion 2, dos elementos hacia adelante
 nombres.splice(2,2,10,30,44); // Elimina desde la posicion 2, dos elementos. Y coloca 10,30,44
 nombres.splice(2,0,10,30,44); // Desde la posicion 2, al colocar 0. Se agregan los elementos sin borrar nada.
-
+nombres.sort(); // Ordena el array, segun UNICODE
 
 //Templates de Strings
 let n= "pedro";
